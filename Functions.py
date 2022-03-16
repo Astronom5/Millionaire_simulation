@@ -1,4 +1,5 @@
 from random import randint
+import re
 
 
 def add_data():
@@ -12,13 +13,15 @@ def add_data():
     return set(data)
 
 
-def counter (counter_value = 0):
-    counter_value = counter_value + 1
-    return counter_value
-
-
 def lottery_draw():
     lottery_numbers = set()
     while len(lottery_numbers)<6:
         lottery_numbers.add(randint(1,49))
     return lottery_numbers
+
+def win_classification( typed_numbers, lottery_numbers):
+    win_type = len(typed_numbers.intersection(lottery_numbers))
+    if win_type>2:
+        return win_type
+    else:
+        return 0
