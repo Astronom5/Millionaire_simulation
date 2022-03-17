@@ -1,7 +1,3 @@
-from random import randint
-import re
-
-
 def add_data():
     data = []
     for counter in range(6):
@@ -39,7 +35,7 @@ def cost(number_of_draws):
 
 
 def income_func(win_type_3 = 0, win_type_4 = 0 ,win_type_5 = 0, win_type_6 = 1):
-    income = win_type_3*16 + win_type_4*500 + win_type_5*5000 + win_type_6*2000000
+    income = win_type_3*24 + win_type_4*500 + win_type_5*5000 + win_type_6*2000000
     return income
 
 
