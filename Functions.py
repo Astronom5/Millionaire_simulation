@@ -1,3 +1,5 @@
+from random import randint
+
 def add_data():
     data = []
     for counter in range(6):
@@ -42,3 +44,17 @@ def income_func(win_type_3 = 0, win_type_4 = 0 ,win_type_5 = 0, win_type_6 = 1):
 def profit_func(income, cost):
     profit=income-cost
     return profit
+
+
+def classification_counter_func(classification_counter, win_type_add):
+    if win_type_add == 0:
+        return classification_counter
+    elif win_type_add == 3:
+        classification_counter[0] += 1
+        return classification_counter
+    elif win_type_add == 4:
+        classification_counter[1] += 1
+        return classification_counter
+    elif win_type_add == 5:
+        classification_counter[2] += 1
+        return classification_counter
