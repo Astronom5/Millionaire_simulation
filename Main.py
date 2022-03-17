@@ -1,4 +1,3 @@
-from cgi import print_arguments
 from Functions import add_data,lottery_draw,win_classification,cost, income_func
 
 
