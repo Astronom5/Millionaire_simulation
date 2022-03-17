@@ -1,10 +1,9 @@
-from Functions import add_data,lottery_draw,win_classification,classification_counter_func 
+from Functions import add_data,lottery_draw,win_classification
+
 
 my_data=add_data()
-print(my_data)
 counter_variable = 0 # initializes number of draws to main prize
-#win_type=[0,0,0,1] ### makes a list of win type from 3 to 6, so initial values will be 0001 for this simulation
-lottery_data = lottery_draw()
+lottery_data = set()
 win_type_3 = 0
 win_type_4 = 0
 win_type_5 = 0 
