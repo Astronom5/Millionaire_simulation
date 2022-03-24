@@ -7,6 +7,12 @@ All of the functions have their own description below.
 from random import randint
 
 def add_data():
+    """This function collects data from user about numbers tipped by him.
+    It is forcing user to type numbers between 1 to 49.
+
+    Returns:
+        set: Numbers tipped by the user (it should be 6 of them)
+    """
     data = []
     for counter in range(6):
         collected_data=int(input(f"Podaj {counter+1} liczbę do losowania: "))
@@ -18,22 +24,32 @@ def add_data():
 
 
 def lottery_draw():
+    """This function simulates one lottery draw of numbers. It picks 6 numbers from 1 to 49 randomly.
+
+    Returns:
+        set: Numbers randomly selected for lottery simulation.
+    """
     lottery_numbers = set()
     while len(lottery_numbers)<6:
         lottery_numbers.add(randint(1,49))
     return lottery_numbers
 
 
-def win_classification( typed_numbers, lottery_numbers):
-    win_type = len(typed_numbers.intersection(lottery_numbers))
+def win_classification( tipped_numbers, lottery_numbers):
+    """This function returns type of win in lottery draw. It counts correctly tipped numbers. 
+       If it is bigger than the treshold it returns number of them.
+
+    Args:
+        tipped_numbers (set): 6 numbers from 1 to 49 selected by the user 
+        lottery_numbers (set): 6 numbers from 1 to 49 randomly selected by the computer
+
+    Returns:
+        int: Amount of correctly tipped numbers above the treshold or 0 as no win information
+    """
+    win_type = len(tipped_numbers.intersection(lottery_numbers))
     if win_type>2:
         return win_type
     return 0
-
-
-def age_counter(number_of_draws):
-    added_age = number_of_draws/52
-    return added_age
 
 
 def cost_func(number_of_draws):
