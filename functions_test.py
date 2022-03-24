@@ -1,3 +1,4 @@
+"""Module for testing functions from millionaire simulation"""
 import functions
 TEST_SET = {1,2,3,4,5,6}
 
@@ -12,6 +13,8 @@ def test_min_value():
 def test_size_of_draw():
     size = len(functions.lottery_draw())
     assert size == 6
+
+#Tests for check output from win_classification()
 
 def test_win_classification_0():
     classification_type = functions.win_classification(TEST_SET,{7,8,9,10,11,12})
@@ -43,7 +46,9 @@ def test_cost():
 
 def test_income():
     tested_income= functions.income_func(1,1,1,1)
-    assert tested_income == 2005524    
+    assert tested_income == 2005524
+
+#Tests for check output from classification_counter_func()
 
 def test_classification_0():
     test_value = functions.classification_counter_func(0,0,0,0)
@@ -60,3 +65,7 @@ def test_classification_4():
 def test_classification_5():
     test_value = functions.classification_counter_func(0,0,0,5)
     assert test_value == [0,0,1,1]
+
+def test_classification_type():
+    test_type_value = type(functions.classification_counter_func(0,0,0,0))
+    assert test_type_value == list
