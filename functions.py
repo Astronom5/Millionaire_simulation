@@ -85,8 +85,7 @@ def income_func(win_type_3 = 0, win_type_4 = 0 ,win_type_5 = 0, win_type_6 = 1):
 
 
 def classification_counter_func(win_type_3, win_type_4,win_type_5, win_type_add):
-    """_summary_
-
+    """This function classifies win type and returns it as a list.
     Args:
         win_type_3 (int): Amount of correctly tipped 3 numbers till now.
         win_type_4 (int): Amount of correctly tipped 4 numbers till now.
