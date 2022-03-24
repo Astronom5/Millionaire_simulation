@@ -97,13 +97,10 @@ def classification_counter_func(win_type_3, win_type_4,win_type_5, win_type_add)
         list: list of every win sorted by type in ascending order
     """
     classification_counter =[win_type_3, win_type_4,win_type_5,1]
-    if win_type_add == 0:
-        return classification_counter
     if win_type_add == 3:
         classification_counter[0] = classification_counter[0]+1
-        return classification_counter
-    if win_type_add == 4:
+    elif win_type_add == 4:
         classification_counter[1] = classification_counter[1]+1
-        return classification_counter
-    classification_counter[2] = classification_counter[2]+1
+    elif win_type_add == 5:
+        classification_counter[2] = classification_counter[2]+1
     return classification_counter
