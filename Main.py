@@ -1,31 +1,34 @@
 from Functions import add_data,lottery_draw,win_classification,cost, income_func
 
 
-my_data=add_data()
-counter_variable = 0 # initializes number of draws to main prize
-lottery_data = set()
-win_type_3 = 0
-win_type_4 = 0
-win_type_5 = 0 
-win_type_6 = 1
+My_data=add_data()
+COUNTER_VARIABLE = 0 # initializes number of draws to main prize
+Lottery_data = set()
+WIN_TYPE_3 = 0
+WIN_TYPE_4 = 0
+WIN_TYPE_5 = 0
+WIN_TYPE_6 = 1
 User_age = float(input("Podaj swój wiek: "))
 
 
-while my_data != lottery_data:
-    lottery_data = lottery_draw()
-    counter_variable +=1
-    win_capture = win_classification(my_data,lottery_data)
+while My_data != Lottery_data:
+    Lottery_data = lottery_draw()
+    COUNTER_VARIABLE +=1
+    win_capture = win_classification(My_data,Lottery_data)
     if win_capture == 3:
-        win_type_3 +=1
+        WIN_TYPE_3 +=1
     elif win_capture == 4:
-        win_type_4 +=1      
+        WIN_TYPE_4 +=1
     elif win_capture == 5:
-        win_type_5 +=1  
+        WIN_TYPE_5 +=1
 
 
-my_cost = cost(counter_variable)
-my_income = income_func(win_type_3, win_type_4, win_type_5)
-my_profit = my_income - my_cost
-print(f"Twoje liczby: {my_data} \nWylosowane liczby: {lottery_data} \nIlość prób: {counter_variable} \nTypy wygranych:\n3: {win_type_3}\n4: {win_type_4}\n5: {win_type_5}")
-print (f"Twój wiek kiedy wygrasz: {User_age + counter_variable/52}")
-print (f"W tym czasie zarobiłeś {my_profit}")
+MY_COST = cost(COUNTER_VARIABLE)
+MY_INCOME = income_func(WIN_TYPE_3, WIN_TYPE_4, WIN_TYPE_5)
+my_profit = MY_INCOME - MY_COST
+print(f"Twoje liczby: {My_data} \nWylosowane liczby: {Lottery_data} \n\
+Ilość prób: {COUNTER_VARIABLE}\n\
+Typy wygranych:\n3: {WIN_TYPE_3}\n4: {WIN_TYPE_4}\n5: {WIN_TYPE_5}")
+print (f"Twój wiek kiedy wygrasz: {User_age + COUNTER_VARIABLE//52} lat \
+i {COUNTER_VARIABLE % 52} tygodni")
+print (f"W tym czasie zarobiłeś {my_profit} zł")
