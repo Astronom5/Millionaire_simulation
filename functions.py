@@ -24,7 +24,8 @@ def add_data():
 
 
 def lottery_draw():
-    """This function simulates one lottery draw of numbers. It picks 6 numbers from 1 to 49 randomly.
+    """This function simulates one lottery draw of numbers.
+       It picks 6 numbers from 1 to 49 randomly.
 
     Returns:
         set: Numbers randomly selected for lottery simulation.
@@ -36,11 +37,11 @@ def lottery_draw():
 
 
 def win_classification( tipped_numbers, lottery_numbers):
-    """This function returns type of win in lottery draw. It counts correctly tipped numbers. 
+    """This function returns type of win in lottery draw. It counts correctly tipped numbers.
        If it is bigger than the treshold it returns number of them.
 
     Args:
-        tipped_numbers (set): 6 numbers from 1 to 49 selected by the user 
+        tipped_numbers (set): 6 numbers from 1 to 49 selected by the user
         lottery_numbers (set): 6 numbers from 1 to 49 randomly selected by the computer
 
     Returns:
@@ -53,17 +54,48 @@ def win_classification( tipped_numbers, lottery_numbers):
 
 
 def cost_func(number_of_draws):
+    """Generates cost of all lottery draws, we assume that one draw costs 3 zł.
+
+    Args:
+        number_of_draws (int): Amount of draws needed to win
+
+    Returns:
+        int: Cost of all draws
+    """
     cost=number_of_draws*3
     return cost
 
 
 def income_func(win_type_3 = 0, win_type_4 = 0 ,win_type_5 = 0, win_type_6 = 1):
+    """Function returns amount of money that we won during all lotteries
+       (including the one that we won)
+
+    Args:
+        win_type_3 (int): Amount of correctly tipped 3 numbers. Defaults to 0.
+        win_type_4 (int): Amount of correctly tipped 4 numbers. Defaults to 0.
+        win_type_5 (int): Amount of correctly tipped 5 numbers. Defaults to 0.
+        win_type_6 (int): Amount of correctly tipped all numbers. Defaults to 1.
+
+    Returns:
+        int: Sum of all rewards during all draws
+    """
     income = win_type_3*24 + win_type_4*500 + win_type_5*5000 + win_type_6*2000000
     return income
 
 
 
 def classification_counter_func(win_type_3, win_type_4,win_type_5, win_type_add):
+    """_summary_
+
+    Args:
+        win_type_3 (int): Amount of correctly tipped 3 numbers till now.
+        win_type_4 (int): Amount of correctly tipped 4 numbers till now.
+        win_type_5 (int): Amount of correctly tipped 5 numbers till now.
+        win_type_add (int): Type of win that we ant to classify to existing ones.
+
+    Returns:
+        list: list of every win sorted by type in ascending order
+    """
     classification_counter =[win_type_3, win_type_4,win_type_5,1]
     if win_type_add == 0:
         return classification_counter
