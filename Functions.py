@@ -55,3 +55,4 @@ def classification_counter_func(win_type_3, win_type_4,win_type_5, win_type_add)
     elif win_type_add == 5:
         classification_counter[2] = classification_counter[2]+1
         return classification_counter
+        

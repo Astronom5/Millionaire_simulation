@@ -1,4 +1,10 @@
-from Functions import add_data,lottery_draw,win_classification,cost, income_func
+"""This is our main program that allows us to perform simulation of one of gambling games.
+First it is necessary to input 6 numbers from 1 to 49,
+then it shows how long it will take to win in game,
+and how old the player will be. It shows also the income (or the lose to be precise).
+
+"""
+from functions import add_data,lottery_draw,win_classification,cost, income_func
 
 
 My_data=add_data()
