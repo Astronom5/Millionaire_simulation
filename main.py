@@ -4,7 +4,7 @@ then it shows how long it will take to win in game,
 and how old the player will be. It shows also the income (or the lose to be precise).
 
 """
-from functions import add_data,lottery_draw,win_classification,cost, income_func
+from functions import add_data,lottery_draw,win_classification,cost_func, income_func
 
 
 My_data=add_data()
@@ -29,7 +29,7 @@ while My_data != Lottery_data:
         WIN_TYPE_5 +=1
 
 
-MY_COST = cost(COUNTER_VARIABLE)
+MY_COST = cost_func(COUNTER_VARIABLE)
 MY_INCOME = income_func(WIN_TYPE_3, WIN_TYPE_4, WIN_TYPE_5)
 my_profit = MY_INCOME - MY_COST
 print(f"Twoje liczby: {My_data} \nWylosowane liczby: {Lottery_data} \n\

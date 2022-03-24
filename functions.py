@@ -1,3 +1,9 @@
+"""
+Those are the functions used in Millionaire simulation.
+You can write your own functions here and import tham to main program.
+All of the functions have their own description below.
+"""
+
 from random import randint
 
 def add_data():
@@ -22,8 +28,7 @@ def win_classification( typed_numbers, lottery_numbers):
     win_type = len(typed_numbers.intersection(lottery_numbers))
     if win_type>2:
         return win_type
-    else:
-        return 0
+    return 0
 
 
 def age_counter(number_of_draws):
@@ -31,7 +36,7 @@ def age_counter(number_of_draws):
     return added_age
 
 
-def cost(number_of_draws):
+def cost_func(number_of_draws):
     cost=number_of_draws*3
     return cost
 
@@ -46,16 +51,11 @@ def classification_counter_func(win_type_3, win_type_4,win_type_5, win_type_add)
     classification_counter =[win_type_3, win_type_4,win_type_5,1]
     if win_type_add == 0:
         return classification_counter
-    elif win_type_add == 3:
+    if win_type_add == 3:
         classification_counter[0] = classification_counter[0]+1
         return classification_counter
-    elif win_type_add == 4:
+    if win_type_add == 4:
         classification_counter[1] = classification_counter[1]+1
         return classification_counter
-    elif win_type_add == 5:
-        classification_counter[2] = classification_counter[2]+1
-        return classification_counter
-<<<<<<< HEAD:Functions.py
-        
-=======
->>>>>>> 30f7d13097fe468da81337e4b495a0a8f6ad2667:functions.py
+    classification_counter[2] = classification_counter[2]+1
+    return classification_counter
